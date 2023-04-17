@@ -16,7 +16,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  margin-top 20px;
+  margin-top: 20px;
 }
 
 .keyword {
@@ -42,5 +42,11 @@ body {
   #keywords {
     grid-template-columns: 1fr;
     justify-content: center; /* Center the single column on mobile */
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .keyword {
+    width: 260px; /* Set the fixed width of keyword to 260px on larger screens */
   }
 }
