@@ -16,7 +16,7 @@ const database = [
     "reponse" : "Jurassic Park",
     "keywords" : [
       "film",
-      "Steven Spielbergblrgblrgblf",
+      "Steven Spielberg",
       "roman",
       "Michael Crichton",
       "parc",
@@ -47,7 +47,7 @@ const database = [
   { 
     "reponse" : "The Last Of Us",
     "keywords" : [
-      "Naughty_Dog",
+      "Naughty Dog",
       "action-aventure",
       "survie",
       "horreur",
@@ -98,7 +98,7 @@ const database = [
       "président",
       "France",
       "politique",
-      "Premier_ministre",
+      "Premier ministre",
       "maire",
       "Paris",
       "Gaullisme",
@@ -150,7 +150,7 @@ const database = [
       "Hradčany",
       "Vieille Ville",
       "Mala Strana",
-      "Horloge_astronomique",
+      "Horloge astronomique",
       "Franz Kafka",
       "Velours",
       "tramway"      
