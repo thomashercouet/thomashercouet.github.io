@@ -33,8 +33,31 @@ body {
   color: white;
 }
 
+.hidden {
+  display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  z-index: 10;
+  max-width: 90%;
+}
+
 /* Add this media query to your styles.css file */
 @media screen and (max-width: 768px) {
+  body {
+    align-items: flex-start; /* Aligner le contenu en haut */
+    height: auto; /* Autoriser le corps à avoir une hauteur variable */
+  }
+
   #app {
     width: 280px; /* Set the fixed width of #app to 250px on mobile */
   }

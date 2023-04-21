@@ -215,12 +215,39 @@ function revealKeyword(keywordElement, index) {
   }
 }
 
+function showPopup() {
+  document.getElementById("popup").classList.remove("hidden");
+  document.getElementById("popup-points").textContent = remainingPoints;
+  updateEmojiSquares();
+}
+
+function updateEmojiSquares() {
+  const emojiSquaresElement = document.querySelector(".emoji-squares");
+  const squareColors = keywordsList.map((_, index) => document.querySelector(`.keyword:nth-child(${index + 1})`).classList.contains("revealed") ? "🟩" : "⬜");
+  emojiSquaresElement.textContent = squareColors.join(" ");
+}
+
+function copyTextToClipboard() {
+  const textToCopy = document.querySelector(".popup-text").textContent + "\n" + document.querySelector(".emoji-squares").textContent;
+  const textarea = document.createElement("textarea");
+  textarea.textContent = textToCopy;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+  alert("Le texte a été copié dans le presse-papiers.");
+}
+
+function restartGame() {
+  location.reload();
+}
+
+
 function submitAnswer() {
   const userAnswer = answerInput.value.trim();
 
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-    alert(`Félicitations ! Vous avez trouvé la bonne réponse avec ${remainingPoints} points restants.`);
-    location.reload();
+    showPopup();
     } else {
     remainingPoints--;
     points.textContent = remainingPoints;
