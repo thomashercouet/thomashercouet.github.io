@@ -73,3 +73,19 @@ body {
     width: 260px; /* Set the fixed width of keyword to 260px on larger screens */
   }
 }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+.keyword-flip {
+  animation: flip 0.6s ease-in-out forwards;
+}

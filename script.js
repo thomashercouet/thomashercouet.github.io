@@ -208,8 +208,12 @@ keywordsList.forEach((keyword, index) => {
 
 function revealKeyword(keywordElement, index) {
   if (!keywordElement.classList.contains("revealed")) {
-    keywordElement.textContent = keywordsList[index];
-    keywordElement.classList.add("revealed");
+    keywordElement.classList.add("keyword-flip");
+    setTimeout(() => {
+      keywordElement.textContent = keywordsList[index];
+      keywordElement.classList.add("revealed");
+      keywordElement.classList.remove("keyword-flip");
+    }, 300); // Attendre la moitié de la durée de l'animation (0.6s / 2 = 0.3s)
     remainingPoints--;
     points.textContent = remainingPoints;
   }
